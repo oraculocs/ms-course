@@ -2,7 +2,6 @@ package com.devsuperior.hrworker.resources;
 
 import java.util.List;
 
-import org.hibernate.annotations.common.util.impl.LoggerFactory;
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
@@ -36,6 +35,13 @@ public class WorkerResource {
 	
 	@GetMapping(value = "/{id}")
 	public ResponseEntity<Worker> findById(@PathVariable Long id){
+		
+//		try {
+//			Thread.sleep(3000L);
+//		} catch (InterruptedException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 		
 		logger.info("PORT = " + env.getProperty("local.server.port"));
 		
